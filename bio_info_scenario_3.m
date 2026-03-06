@@ -4,21 +4,26 @@
 %b2 which led to an increase of lynxes deaths and later to a larger increase
 %since a lot of hares were present.
 
+%This code uses the function plants_hare_lynx.m. To be able to run the
+%code, make sure that function file lies in the same folder as this one.
+
+%For this assignment, the book "Modeling Life" by Alan Garfinkel, Jane
+%Shevtsov and Yina Guo of 2010 (ISBN 978-3-319-59730-0) was taken as
+%reference.
 
 clear
 clc
 close all
 
+a1 = 5;		%the maximum plant consumption rate by hares is the same as in the textbook
+b1 = 3;		%here the value stays the same as in the textbook 
+a2 = 0.1;	%the value stays the same as in the textbook 
+b2 = 2;		%the value stays the same as in the textbook
+d1 =0.4;	%the value stays the same as in the textbook
+d2 = 0.01;	%%the value stays the same as in the textbook
 
-a1 = 5;
-b1 = 3;
-a2 = 0.1;
-b2 = 2;
-d1 =0.4;
-d2 = 0.01;
 
-
-X0 = 0.8;   
+X0 = 0.8;	%the initial populations for the 3 species are the same as in the textbook (figure 5.1)
 Y0 = 0.2;  
 Z0 = 8;   
 
@@ -26,7 +31,6 @@ y0 = [X0 Y0 Z0];
 y1 = [X0 Y0+0.01 Z0];
 
 tspan= [0 200];
-
 tspan1 =[1 201];
 
 [t,y] = ode45(@(t,y) plants_hare_lynx(t,y,a1,a2,b1,b2,d1,d2), tspan, y0);
@@ -46,9 +50,8 @@ title('Proof of unpredictibility (scenario 3)')
 xlabel('Time [months]')
 ylabel('Population')
 legend('plant','hare', 'lynx','plant2','hare2', 'lynx2','Location','best')
-%plant2 , lynx2 and hare2 are the names for the populatation after a small
-%change of 0,01 of the hare population we can see an important change in
-%population after this change.
+
+%plant2, lynx2 and hare2 are the names for the population. To show unpredictability, we add a small value of 0.01 to the hare population. After a long timespan, an important deviation can be observed in the population sizes. 
 
 % 3D plot to check periodicity (change timespan to 700)
 figure("Name",'Not periodic proof')
@@ -61,6 +64,12 @@ zlabel('Carnivores / Lynx (Z)')
 
 title('Not Periodic ')
 view(45,25)
+
+%The plot shows a trajectory which is not closed or periodic. This indicates chaos. We can notice that with a long timespan, the trajectory goes through different regions without returning to the exact same points. It does not follow a single orbit
+
+
+
+
 
 % Deterministic
 figure("Name",'deterministic proof')
@@ -83,4 +92,4 @@ xlabel('Xn')
 
 ylabel('Xn+1')
 
-
+%The data follows a smooth line rather than scattered points, indicating that the system %evolves according to fixed equations rather than random processes. So we can conclude %that it is deterministic.

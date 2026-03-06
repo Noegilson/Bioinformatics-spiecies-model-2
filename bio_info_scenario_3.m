@@ -1,12 +1,15 @@
+%For scenario 3, the model will be taken keeping approximately the
+%same values as in the book. Then parameters will be adjusted 
+%to obtain 2 peaks in the period of 200 months. To do so we had to reduce
+%b2 which led to an increase of lynxes deaths and later to a larger increase
+%since a lot of hares were present.
+
+
 clear
 clc
 close all
 
-%For scenario 3 the thing was to take the model with aproximatevely the
-%same values as in the book and then change then we adjust the parameters
-%to obtain 2 peaks in the period of 200 months for that we had to reduces
-%b2 wich lead to a faster death of lynxes and then to a faster growth of
-%them cause there are a lot of hares so the population change faster.
+
 a1 = 5;
 b1 = 3;
 a2 = 0.1;
@@ -79,4 +82,5 @@ title('lynx')
 xlabel('Xn')
 
 ylabel('Xn+1')
+
 

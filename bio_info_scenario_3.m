@@ -39,7 +39,7 @@ figure("Name",'unpredictibility proof')
 plot(t,y)
 hold on
 plot(t1,y2)
-title('plant-hare-lynx Populations Over Time (scenario 3)')
+title('Proof of unpredictibility (scenario 3)')
 xlabel('Time [months]')
 ylabel('Population')
 legend('plant','hare', 'lynx','plant2','hare2', 'lynx2','Location','best')
@@ -79,3 +79,4 @@ title('lynx')
 xlabel('Xn')
 
 ylabel('Xn+1')
+

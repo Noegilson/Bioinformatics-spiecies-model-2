@@ -53,6 +53,7 @@ legend('plant','hare', 'lynx','plant2','hare2', 'lynx2','Location','best')
 
 %plant2, lynx2 and hare2 are the names for the population. To show unpredictability, we add a small value of 0.01 to the hare population. 
 %After a long timespan, an important deviation can be observed in the population sizes. 
+%This proves that a small change in the initial conditions has a large impact. This is a key characteristic of chaotic behavior.
 
 % 3D plot to check periodicity (change timespan to 700)
 figure("Name",'Not periodic proof')
@@ -94,4 +95,5 @@ ylabel('Xn+1')
 %The data follows a smooth line rather than scattered points, indicating that the system 
 %evolves according to fixed equations rather than random processes. So we can conclude 
 %that it is deterministic.
+
 

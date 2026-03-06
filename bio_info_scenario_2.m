@@ -46,11 +46,12 @@ zlabel('Carnivores / Lynx (Z)')
 title('Three-Species Food Chain Dynamics (scenario 2)')
 view(45,25)
  
-
+% 2D representation of the 3 populations over time
 figure("Name",'plant-hare-lynx')
 plot(t,y)
 title('plant-hare-lynx Populations Over Time (scenario 2)')
 xlabel('Time [months]')
 ylabel('Population')
 legend('plant','hare', 'lynx','Location','North')
+
 

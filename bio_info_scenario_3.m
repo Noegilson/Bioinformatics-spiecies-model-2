@@ -59,6 +59,7 @@ zlabel('Carnivores / Lynx (Z)')
 title('Not Periodic ')
 view(45,25)
 
+% Deterministic
 figure("Name",'deterministic proof')
 subplot(1,3,1)
 plot(y(:,1),y3(:,1))
@@ -76,4 +77,5 @@ subplot(1,3,3)
 plot(y(:,3),y3(:,3))
 title('lynx')
 xlabel('Xn')
+
 ylabel('Xn+1')

@@ -1,5 +1,5 @@
 %For scenario 2, the goal is to extinguish the population of lynxes around
-%12 months. The surviving populations then need to get stable within 120 months 
+%12 months. The surviving populations then needs to get stable within 120 months 
 
 %This code uses the function plants_hare_lynx.m. To be able to run the
 %code, make sure that function file lies in the same folder as this one.
@@ -53,3 +53,4 @@ title('plant-hare-lynx Populations Over Time (scenario 2)')
 xlabel('Time [months]')
 ylabel('Population')
 legend('plant','hare', 'lynx','Location','North')
+

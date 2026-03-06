@@ -51,7 +51,8 @@ xlabel('Time [months]')
 ylabel('Population')
 legend('plant','hare', 'lynx','plant2','hare2', 'lynx2','Location','best')
 
-%plant2, lynx2 and hare2 are the names for the population. To show unpredictability, we add a small value of 0.01 to the hare population. After a long timespan, an important deviation can be observed in the population sizes. 
+%plant2, lynx2 and hare2 are the names for the population. To show unpredictability, we add a small value of 0.01 to the hare population. 
+%After a long timespan, an important deviation can be observed in the population sizes. 
 
 % 3D plot to check periodicity (change timespan to 700)
 figure("Name",'Not periodic proof')
@@ -65,10 +66,8 @@ zlabel('Carnivores / Lynx (Z)')
 title('Not Periodic ')
 view(45,25)
 
-%The plot shows a trajectory which is not closed or periodic. This indicates chaos. We can notice that with a long timespan, the trajectory goes through different regions without returning to the exact same points. It does not follow a single orbit
-
-
-
+%The plot shows a trajectory which is not closed or periodic. This indicates chaos. We can notice that with a long timespan, 
+%the trajectory goes through different regions without returning to the exact same points. It does not follow a single orbit
 
 
 % Deterministic
@@ -92,4 +91,7 @@ xlabel('Xn')
 
 ylabel('Xn+1')
 
-%The data follows a smooth line rather than scattered points, indicating that the system %evolves according to fixed equations rather than random processes. So we can conclude %that it is deterministic.
+%The data follows a smooth line rather than scattered points, indicating that the system 
+%evolves according to fixed equations rather than random processes. So we can conclude 
+%that it is deterministic.
+

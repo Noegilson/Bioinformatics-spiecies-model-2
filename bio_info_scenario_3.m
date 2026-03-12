@@ -1,7 +1,7 @@
 %For scenario 3, the model will be taken keeping approximately the
 %same values as in the book. Then parameters will be adjusted 
 %to obtain 2 peaks in the period of 200 months. To do so we had to reduce
-%b2 which led to an increase of lynxes deaths and later to a larger increase
+%b2 which led to an decrease of the lynx predation (increase of lynxes deaths) and later to a larger increase
 %since a lot of hares were present.
 
 %This code uses the function plants_hare_lynx.m. To be able to run the
@@ -95,5 +95,6 @@ ylabel('Xn+1')
 %The data follows a smooth line rather than scattered points, indicating that the system 
 %evolves according to fixed equations rather than random processes. So we can conclude 
 %that it is deterministic.
+
 
 

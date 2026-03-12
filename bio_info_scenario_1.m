@@ -14,11 +14,11 @@ close all
 
 %values from the book were taken as starting point. 
 a1 = 5;     %the maximum plant consumption rate by hares is the same as in the textbook
-b1 = 3;     %the saturation parameter for plant consumption stays teh same
-a2 = 0.1;   %the maximum hare consumtion rate by lynxes stays the same
+b1 = 3;     %the saturation parameter for plant consumption stays the same as in the textbook
+a2 = 0.1;   %the maximum lynx predation rate on hares stays the same as in the textbook
 b2 = 1.3;   %the saturation parameter for predation is smaller than in the reference
 d1 =0.4;    %the death rate of hares per capita stays the same
-d2 = 0.01;  %the death rate of the lynxes per capita stays teh same
+d2 = 0.01;  %the death rate of the lynxes per capita stays the same
 
 %values for the populations starting point were taken from figure 5.1 in the book 
 X0 = 0.8;   
@@ -28,7 +28,7 @@ Z0 = 8;
 y0 = [X0 Y0 Z0];
 
 
-tspan = [0 250];
+tspan = [0 200];
 
 
 [t,y] = ode45(@(t,y) plants_hare_lynx(t,y,a1,a2,b1,b2,d1,d2), tspan, y0);
@@ -56,4 +56,5 @@ plot(t,y)
 title('plant-hare-lynx Populations Over Time (scenario 1)')
 xlabel('Time [months]')
 ylabel('Population')
+
 legend('plant','hare', 'lynx','Location','North')

@@ -31,22 +31,20 @@ y0 = [X0 Y0 Z0];
 y1 = [X0 Y0+0.01 Z0];
 
 tspan= [0 200];
-tspan1 =[1 201];
 
 [t,y] = ode45(@(t,y) plants_hare_lynx(t,y,a1,a2,b1,b2,d1,d2), tspan, y0);
-[tspan1,y3] = ode45(@(t,y) plants_hare_lynx(t,y,a1,a2,b1,b2,d1,d2), tspan1, y0);
 [t1,y2] = ode45(@(t,y) plants_hare_lynx(t,y,a1,a2,b1,b2,d1,d2), tspan, y1);
 
 X = y(:,1);
 Y = y(:,2);
 Z = y(:,3);
 
-%  2D plot to check unpredictanbility
+%  2D plot to check unpredictanbility or sensitivity to initial values
 figure("Name",'unpredictibility proof')
 plot(t,y)
 hold on
 plot(t1,y2)
-title('Proof of unpredictibility (scenario 3)')
+title('Proof of Sensibility To Initial Values (scenario 3)')
 xlabel('Time [months]')
 ylabel('Population')
 legend('plant','hare', 'lynx','plant2','hare2', 'lynx2','Location','best')
@@ -72,21 +70,24 @@ view(45,25)
 
 
 % Deterministic
+y_next = y(2:end,:);
+y_now  = y(1:end-1,:);
+
 figure("Name",'deterministic proof')
 subplot(1,3,1)
-plot(y(:,1),y3(:,1))
+plot(y_now(:,1),y_next(:,1),'.')
 title('plant')
 xlabel('Xn')
 ylabel('Xn+1')
 
 subplot(1,3,2)
-plot(y(:,2),y3(:,2))
+plot(y_now(:,2),y_next(:,2),'.')
 title('hare')
 xlabel('Xn')
 ylabel('Xn+1')
 
 subplot(1,3,3)
-plot(y(:,3),y3(:,3))
+plot(y_now(:,3),y_next(:,3),'.')
 title('lynx')
 xlabel('Xn')
 
@@ -95,6 +96,7 @@ ylabel('Xn+1')
 %The data follows a smooth line rather than scattered points, indicating that the system 
 %evolves according to fixed equations rather than random processes. So we can conclude 
 %that it is deterministic.
+
 
 
 
